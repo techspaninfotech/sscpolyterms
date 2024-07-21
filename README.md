@@ -1,0 +1,2 @@
+# sscpolyterms
+terms and conditions
