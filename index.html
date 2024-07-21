@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sau. Shantidevi Chavan College of Engineering and Technology (Polytechnic)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background: #ecf0f1;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #bdc3c7;
+            background: #f9f9f9;
+            margin: 0 5px;
+            text-align: center;
+        }
+        .tab.active {
+            background: #2c3e50;
+            color: white;
+        }
+        .container {
+            flex: 1;
+            padding: 20px;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+        @media (max-width: 600px) {
+            .tabs {
+                flex-direction: column;
+            }
+            .tab {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sau. Shantidevi Chavan College of Engineering and Technology (Polytechnic)</h1>
+    </header>
+
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('terms')">Terms and Conditions</div>
+        <div class="tab" onclick="showTab('rules')">Rules and Regulations</div>
+    </div>
+
+    <div class="container">
+        <div id="terms" class="tab-content active">
+            <iframe src="https://quickpages11.blogspot.com/p/sscpoly-terms-and-condition.html?m=1" id="terms-iframe"></iframe>
+        </div>
+        <div id="rules" class="tab-content">
+            <iframe src="https://quickpages11.blogspot.com/p/sscpoly-rules-and-regulations.html?m=1" id="rules-iframe"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sau. Shantidevi Chavan College of Engineering and Technology (Polytechnic). All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            document.querySelector(`.tab[onclick="showTab('${tabName}')"]`).classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+    </script>
+</body>
+</html>
